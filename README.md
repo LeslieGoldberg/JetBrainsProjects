@@ -5,7 +5,7 @@ In this repository, I will upload the project .py files I have completed as part
 Easy Projects:
   Zookeeper (zookeeper.py)
   Hangman (hangman.py)
-  Tic-Tac-Toe (tictactoe.py)
+  Tic-Tac-Toe (tictactoe.py)- no longer unique from Hard Project
   Credit Calculator (creditcalc.py)
 Medium Projects:
   Coffee Machine (coffee_machine.py)
@@ -14,6 +14,6 @@ Medium Projects:
   To-Do List (todolist.py)
 Hard Projects:
   Text-Based Browser (incomplete) (browser.py)
-  Tic-Tac-Toe with AI (incomplete, final stage)
+  Tic-Tac-Toe with AI (tictactoe.py)
 Challenging Projects:
   HyperNews Portal (incomplete)
