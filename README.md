@@ -14,6 +14,7 @@ Medium Projects:
   To-Do List (todolist.py)
 Hard Projects:
   Text-Based Browser (incomplete) (browser.py)
+  Password Hacker (incomplete) (hack.py)
   Tic-Tac-Toe with AI (tictactoe.py)
 Challenging Projects:
   HyperNews Portal (incomplete)
