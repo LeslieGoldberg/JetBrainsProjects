@@ -8,13 +8,17 @@ from colorama import Fore
 class Browser:
     def __init__(self):
         """
-        class Browser can print the text from a website when called with or without 'https://'
-        param site_request:: str representing a website
+        class Browser prints the text from a website when called with or without 'https://'. Text that are links show up in blue.
+        param tabs_history:: array of tabs to allow for self.back() func
+        param tabs_library:: dictionary containing key: website name as called without 'https://' or '.com', value: paths to the saved files of the text within the websites
         """
         self.tabs_history = []
         self.tabs_library = {}
 
     def new_site(self, website):
+        """
+        Saves unknown website as a file under a nickname, adds nickname: path to tabs_library, then calls self.known_site to print and save to tabs_history
+        """
         nick_name = website.lstrip('https://').rsplit('.', 1)[0]
         path_now = os.path.join(path, nick_name) + '.txt'
         useful_text = self.parse_site(website)
@@ -29,6 +33,7 @@ class Browser:
         return s == s.parent.string and s.parent.name in tag_list
 
     def parse_site(self, website):
+        """Takes the content of a website and returns a readable format of the text to write to file"""
         r = requests.get(website)
         soup = BeautifulSoup(r.content, 'html.parser')
         text_list = soup.find_all(string=self.is_only_string_in_tag)
@@ -42,13 +47,15 @@ class Browser:
         return text
 
     def known_site(self, site, path_to_file):
+        """
+        Prints the text from a website as saved to file by parse_site and new_site. Adds the site to tabs_history for use in self.back()
+        """
         self.tabs_history.append(site)
-        # r = requests.get(site)
-        # print(r.text)
         with open(path_to_file, 'r') as open_site:
             print(open_site.read())
 
     def back(self):
+        """Returns the last website called to be printed by self.known_site"""
         if len(self.tabs_history) > 1:
             self.tabs_history.pop()
             yield self.tabs_history.pop()
