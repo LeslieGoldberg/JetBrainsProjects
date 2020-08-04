@@ -13,7 +13,7 @@ Medium Projects:
   Banking System (banking.py)
   To-Do List (todolist.py)
 Hard Projects:
-  Text-Based Browser (incomplete, passed Stage 4) (browser.py)
+  Text-Based Browser (browser.py)
   Password Hacker (hack.py)
   Tic-Tac-Toe with AI (tictactoe.py)
 Challenging Projects:
